@@ -1,5 +1,6 @@
 package com.example.paniers.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -14,7 +15,11 @@ public class Client {
     private String commune;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Reservation> reservations;
+
+    public Client() {
+    }
 
     // Getters et setters
     public Long getId() {
