@@ -1,5 +1,6 @@
 package com.example.paniers.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -14,13 +15,10 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @JsonBackReference
     private Client client;
 
-    public Reservation(long l, LocalDate now, int i, double v, Object o) {
-    }
-
     public Reservation() {
-
     }
 
     // Getters et setters
