@@ -30,8 +30,8 @@ class ClientServiceTests {
         MockitoAnnotations.openMocks(this);
         client = new Client();
         client.setId(1L);
-        client.setPrenom("John");
-        client.setNom("Doe");
+        client.setPrenom("Houssam eddine ");
+        client.setNom("lamhamdi");
     }
 
     @Test
