@@ -11,6 +11,7 @@ public class Reservation {
     private Long id;
     private LocalDate dateCommande;
     private int quantite;
+    private double prixUnitaire;
     private double prix;
 
     @ManyToOne
@@ -20,8 +21,6 @@ public class Reservation {
 
     public Reservation() {
     }
-
-    // Getters et setters
     public Long getId() {
         return id;
     }
@@ -46,6 +45,14 @@ public class Reservation {
         this.quantite = quantite;
     }
 
+    public double getPrixUnitaire() {
+        return prixUnitaire;
+    }
+
+    public void setPrixUnitaire(double prixUnitaire) {
+        this.prixUnitaire = prixUnitaire;
+    }
+
     public double getPrix() {
         return prix;
     }
@@ -62,3 +69,4 @@ public class Reservation {
         this.client = client;
     }
 }
+
