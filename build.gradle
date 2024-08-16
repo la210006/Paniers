@@ -18,14 +18,13 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.google.code.gson:gson:2.8.9' // Vérifie la dernière version disponible
 	implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
-	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2' // mise à jour de Jackson
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	implementation 'com.h2database:h2' // Dépendance H2
 }
 
 tasks.named('test') {
