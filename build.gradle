@@ -18,9 +18,11 @@ repositories {
 }
 
 dependencies {
-	implementation 'com.google.code.gson:gson:2.8.9' // Vérifie la dernière version disponible
+	implementation 'com.google.code.gson:gson:2.8.9'
 	implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.mockito:mockito-inline:3.12.4'
+
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

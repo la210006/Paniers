@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\sqlite\db\paniers.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="PaniersTest.db" uuid="8ed65eb3-ebfe-4abe-9178-63c0347de2da">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\sqlite\db\PaniersTest.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
