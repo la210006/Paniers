@@ -57,7 +57,7 @@ public class ReservationControleur {
         Reservation reservation = reservationService.getReservationById(id);
 
         if (reservation == null) {
-            return null; // Ou tu peux lancer une exception
+            return null;
         }
 
         Map<String, Object> reservationMap = new LinkedHashMap<>();

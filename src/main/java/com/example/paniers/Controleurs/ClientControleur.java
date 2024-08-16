@@ -57,7 +57,7 @@ public class ClientControleur {
         Client client = clientService.getClientById(id);
 
         if (client == null) {
-            return null; // Ou tu peux lancer une exception
+            return null;
         }
 
         Map<String, Object> clientMap = new LinkedHashMap<>();

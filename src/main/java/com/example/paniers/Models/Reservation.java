@@ -15,7 +15,7 @@ public class Reservation {
     private double prix;
     private double prixUnitaire;
 
-    @JsonBackReference // Evite les boucles dans la sérialisation
+    @JsonBackReference
     private Client client;
 
     // Getters et Setters
