@@ -1,26 +1,24 @@
 package com.example.paniers.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
 
-@Entity
 public class Reservation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate dateCommande;
-    private int quantite;
-    private double prixUnitaire;
-    private double prix;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    @JsonBackReference
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dateCommande;
+
+    private int quantite;
+    private double prix;
+    private double prixUnitaire;
+
+    @JsonBackReference // Evite les boucles dans la sérialisation
     private Client client;
 
-    public Reservation() {
-    }
+    // Getters et Setters
     public Long getId() {
         return id;
     }
@@ -45,20 +43,20 @@ public class Reservation {
         this.quantite = quantite;
     }
 
-    public double getPrixUnitaire() {
-        return prixUnitaire;
-    }
-
-    public void setPrixUnitaire(double prixUnitaire) {
-        this.prixUnitaire = prixUnitaire;
-    }
-
     public double getPrix() {
         return prix;
     }
 
     public void setPrix(double prix) {
         this.prix = prix;
+    }
+
+    public double getPrixUnitaire() {
+        return prixUnitaire;
+    }
+
+    public void setPrixUnitaire(double prixUnitaire) {
+        this.prixUnitaire = prixUnitaire;
     }
 
     public Client getClient() {
@@ -69,4 +67,3 @@ public class Reservation {
         this.client = client;
     }
 }
-
