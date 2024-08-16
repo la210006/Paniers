@@ -1,9 +1,13 @@
 package com.example.paniers.Dao;
 
 import com.example.paniers.Models.Client;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
-public interface ClientDao extends JpaRepository<Client, Long> {
+public interface ClientDao {
+    Client findById(Long id);
+    List<Client> findAll();
+    void save(Client client);
+    void update(Client client);
+    void delete(Long id);
+
 }

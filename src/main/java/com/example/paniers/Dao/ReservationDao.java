@@ -1,9 +1,13 @@
 package com.example.paniers.Dao;
 
 import com.example.paniers.Models.Reservation;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface ReservationDao extends JpaRepository<Reservation, Long> {
+import java.util.List;
+
+public interface ReservationDao {
+    Reservation findById(Long id);
+    List<Reservation> findAll();
+    void save(Reservation reservation);
+    void update(Reservation reservation);
+    void delete(Long id);
 }
