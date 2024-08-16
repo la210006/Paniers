@@ -1,27 +1,30 @@
 package com.example.paniers.Models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.List;
 
-@Entity
+@JsonPropertyOrder({ "client_id", "prenom", "nom", "commune", "reservations" })
 public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("client_id")
     private Long id;
+
+    @JsonProperty("prenom")
     private String prenom;
+
+    @JsonProperty("nom")
     private String nom;
+
+    @JsonProperty("commune")
     private String commune;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonProperty("reservations")
+    @JsonManagedReference // Gère la sérialisation pour éviter les cycles
     private List<Reservation> reservations;
 
-    public Client() {
-    }
-
-    // Getters et setters
+    // Getters et Setters
     public Long getId() {
         return id;
     }

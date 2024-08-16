@@ -1,15 +1,11 @@
 package com.example.paniers.Util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
+import java.nio.file.Path;
 
 public class Prix {
-    private static final Logger logger = LoggerFactory.getLogger(Prix.class);
     private double prixPanier;
 
     public double getPrixPanier() {
@@ -20,22 +16,16 @@ public class Prix {
         this.prixPanier = prixPanier;
     }
 
-    public static Prix lirePrixDuFichier(String nomFichier) {
+    public static Prix lirePrixDuFichier(String cheminFichier) {
         ObjectMapper mapper = new ObjectMapper();
         Prix prix = null;
         try {
-            // Charger le fichier depuis le classpath
-            InputStream inputStream = Prix.class.getClassLoader().getResourceAsStream(nomFichier);
-            if (inputStream != null) {
-                prix = mapper.readValue(inputStream, Prix.class);
-                logger.info("Prix lu: " + prix.getPrixPanier());
-            } else {
-                logger.error("Le fichier n'a pas été trouvé dans le classpath: " + nomFichier);
-            }
+            Path fichier = Path.of(cheminFichier);
+            prix = mapper.readValue(fichier.toFile(), Prix.class);
         } catch (IOException e) {
-            logger.error("Erreur lors de la lecture du fichier JSON", e);
+            e.printStackTrace();
         }
         return prix;
     }
-}
 
+}
