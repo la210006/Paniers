@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Persistence {
 
-    private static final String URL = "jdbc:sqlite:C:/sqlite/db/paniersTest.db"; // Chemin correct vers la base de données
+    private static final String URL = "jdbc:sqlite:C:/sqlite/db/paniers.db"; // Chemin correct vers la base de données
 
     static {
         try {

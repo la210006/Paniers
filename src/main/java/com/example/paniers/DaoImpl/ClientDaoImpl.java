@@ -36,7 +36,7 @@ public class ClientDaoImpl implements ClientDao {
                 client.setNom(rs.getString("nom"));
                 client.setCommune(rs.getString("commune"));
 
-
+                // Load Reservations for the client
                 List<Reservation> reservations = loadReservations(client.getId(), conn);
                 client.setReservations(reservations);
 

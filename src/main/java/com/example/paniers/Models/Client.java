@@ -21,7 +21,7 @@ public class Client {
     private String commune;
 
     @JsonProperty("reservations")
-    @JsonManagedReference
+    @JsonManagedReference // Gère la sérialisation pour éviter les cycles
     private List<Reservation> reservations;
 
     // Getters et Setters
